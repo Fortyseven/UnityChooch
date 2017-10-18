@@ -49,12 +49,10 @@ public class GameController : MonoBehaviour
         mIsMoving = true;
 
         Vector3 start_pos = mTrain.transform.position;
-        //Vector3 dest_pos = ;
         float c = 0;
         while( c < 1 ) {
             mTrain.transform.position = Vector3.Lerp( start_pos, mDestinationWaypoint.transform.position, c );
             c += Time.deltaTime * TrainSpeed;
-            Debug.Log( c );
             yield return null;
         }
         Debug.Log( "Not moving" );
